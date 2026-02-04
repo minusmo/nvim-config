@@ -13,16 +13,31 @@ return {
     end,
   },
 
+  {
+    'numToStr/Comment.nvim',
+    opts = {
+        -- add any options here
+    }
+  },
+
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+   {
+   	"nvim-treesitter/nvim-treesitter",
+   	  opts = {
+   		  ensure_installed = {
+   			  "vim", "lua", "vimdoc",
+          "html", "css"
+   		},
+   	  },
+   },
+
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" }
+  },
+
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
 }
