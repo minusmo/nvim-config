@@ -1,12 +1,9 @@
-vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
+vim.g.base46_cache = vim.fn.stdpath("data") .. "/base46/"
 vim.g.mapleader = " "
 
+-- Disable netrw since we use nvim-tree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
-vim.g.base46_cache = vim.fn.stdpath
-"data".."/base46/"
-vim.g.mapleader = " "
 
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
@@ -42,64 +39,3 @@ require "autocmds"
 vim.schedule(function()
   require "mappings"
 end)
-
---optionally enable 24-bit colour
-vim.opt.termguicolors = true
-vim.o.lazyredraw = false
-
---OR setup with some options
-require("nvim-tree").setup({
-  sort = {
-    sorter = "case_sensitive",
-  },
-  view = {
-    width = 30,
-  },
-  renderer = {
-    group_empty = true
-  },
-  filters = {
-    dotfiles = false,
-  },
-})
-
-local function open_nvim_tree(data)
-  --buffer is a real file on the disk
---local real_file = vimxfnxfilereadable(dataxfile) == 1
-
-
--- buffer is a [No Name]
---local no_name = dataxfile == "" and vim.bo[data.buf].buftype == ""
-
---if not real_file and not no_name then 
- -- return
---end
-
--- open the tree, find the file but don't focus it
--- require("nvim-tree.api").tree.toggle({ focus = false, find_file = true })
-end
-
-vim.api.nvim_create_autocmd({"VimEnter"}, { callback = open_nvim_tree })
-
-vim.api.nvim_create_user_command(
-  "TT",
-  "NvimTreeToggle",
-  {}
-)
-
-local harpoon = require("harpoon")
-harpoon:setup()
-
-vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end, {desc = "Add harpoon entry"})
-vim.keymap.set("n", "<leader>l", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, {desc = "Open harpoon list"})
-
-vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
-vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end)
-vim.keymap.set("n", "<C-n>", function() harpoon:list():select(3) end)
-vim.keymap.set("n", "<C-s>", function() harpoon:list():select(4) end)
-
--- Toggle previous & next buffers stored within Harpoon list
-vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
-vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
-
-vim.cmd.colorscheme "catppuccin"
