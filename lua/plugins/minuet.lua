@@ -10,7 +10,7 @@ return {
       throttle = 500,
       debounce = 200,
       virtualtext = {
-        auto_trigger_ft = {},
+        auto_trigger_ft = { "*" },
         keymap = {
           accept = "<A-a>",
           accept_line = "<A-l>",
