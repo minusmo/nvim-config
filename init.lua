@@ -39,3 +39,5 @@ require "autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+vim.cmd.colorscheme('everforest')
