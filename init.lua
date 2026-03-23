@@ -40,5 +40,4 @@ vim.schedule(function()
   require "mappings"
 end)
 
-vim.cmd.colorscheme('everforest')
-
+-- vim.cmd.colorscheme('everforest')
