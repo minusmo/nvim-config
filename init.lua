@@ -42,5 +42,3 @@ end)
 
 vim.cmd.colorscheme('everforest')
 
-vim.keymap.set('n', '<C-e>', '<C-^>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>o', '<cmd>Telescope oldfiles<CR>', { noremap = true, silent = true })
