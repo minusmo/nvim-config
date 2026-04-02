@@ -31,6 +31,9 @@ M.ui = {
 
         return "%#StText# " .. icon .. path .. " "
       end,
+      lsp = function()
+        return require("configs.statusline").lsp()
+      end,
     },
   },
 }
