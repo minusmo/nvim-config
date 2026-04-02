@@ -1,10 +1,6 @@
 vim.g.base46_cache = vim.fn.stdpath("data") .. "/base46/"
 vim.g.mapleader = " "
 
--- Disable netrw since we use nvim-tree
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
@@ -39,5 +35,3 @@ require "autocmds"
 vim.schedule(function()
   require "mappings"
 end)
-
--- vim.cmd.colorscheme('everforest')

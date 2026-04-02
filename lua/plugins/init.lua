@@ -1,8 +1,13 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
-    opts = require "configs.conform",
+    opts = {
+      formatters_by_ft = {
+        lua = { "stylua" },
+        css = { "prettier" },
+        html = { "prettier" },
+      },
+    },
   },
 
   {
@@ -10,13 +15,6 @@ return {
     config = function()
       require "configs.lspconfig"
     end,
-  },
-
-  {
-    'numToStr/Comment.nvim',
-    opts = {
-        -- add any options here
-    }
   },
 
   {
