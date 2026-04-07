@@ -1,12 +1,8 @@
 ---@type ChadrcConfig
 local M = {}
 
-M.base46 = {
-  theme = "chocolate",
-  transparency = true,
-}
-
 M.ui = {
+  theme = "gruvbox",
   statusline = {
     theme = "minimal",
     separator_style = "default",
