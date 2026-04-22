@@ -19,7 +19,7 @@ require("core.autocmds")
 require("core.lsp")
 
 require("lazy").setup("plugins", {
-    install = { colorscheme = { "" } },
+    install = { colorscheme = { "everforest" } },
     change_detection = { notify = false },
     rocks = { enabled = false },
     ui = {
