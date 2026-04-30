@@ -9,17 +9,6 @@ if false then return {} end
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
-    {
-        "sainnhe/everforest",
-        config = function()
-            vim.opt.background = "dark"
-            vim.g.everforest_background = "soft"
-            vim.g.everforest_better_performance = 1
-        end,
-    },
-    -- add gruvbox
-    { "ellisonleao/gruvbox.nvim" },
-
     -- Configure LazyVim to load gruvbox
     {
         "LazyVim/LazyVim",
